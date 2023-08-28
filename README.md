@@ -47,4 +47,69 @@ Find All Customers by Given Name Class Method:
     - If the customer's `given_name` matches the given `name`, add the customer to the list.
   - Return the list of customers.
 
-End of Algorithm
+## CHALLENGE 2 Review.py
+Class Definition:
+- Create a class called `Review`.
+- Initialize the class attributes: `customer`, `restaurant`, `rating`.
+- Initialize a class-level list `all_reviews` to store all created review instances.
+
+Initialization (Constructor):
+- Initialize the instance variables `customer`, `restaurant`, and `rating`.
+- Add the instance to the class-level `all_reviews` list.
+
+Get Rating Method:
+- Define a method named `get_rating()` that returns the rating of the review.
+  - Return the `rating` attribute.
+
+All Reviews Class Method:
+- Define a class method named `all()` that returns the list of all review instances.
+  - Return the `all_reviews` list.
+
+Get Customer Method:
+- Define a method named `get_customer()` that returns the associated customer of the review.
+  - Return the `customer` attribute.
+
+Get Restaurant Method:
+- Define a method named `get_restaurant()` that returns the associated restaurant of the review.
+  - Return the `restaurant` attribute.
+
+## CHALLENGE3 Restaurant
+Class Definition:
+- Create a class called `Restaurant`.
+- Initialize the class attribute: `name`.
+- Initialize a class-level list `all_restaurants` to store all created restaurant instances.
+
+Initialization (Constructor):
+- Initialize the instance variable `name`.
+- Initialize an empty list `reviews`.
+- Add the instance to the class-level `all_restaurants` list.
+
+Get Name Method:
+- Define a method named `get_name()` that returns the name of the restaurant.
+  - Return the `name` attribute.
+
+Get Reviews Method:
+- Define a method named `get_reviews()` that returns the list of reviews for the restaurant.
+  - Return the `reviews` list.
+
+Get Customers Method:
+- Define a method named `get_customers()` that returns a list of unique customers who reviewed the restaurant.
+  - Initialize an empty list called `unique_customers`.
+  - Loop through each `review` in the `reviews` list.
+    - If the customer of the review is not in `unique_customers`, add it to the list.
+  - Return the `unique_customers` list.
+
+Average Star Rating Method:
+- Define a method named `average_star_rating()` that calculates and returns the average star rating of the restaurant.
+  - Initialize `total_ratings` to 0.
+  - Loop through each `review` in the `reviews` list.
+    - Add the rating of the review to `total_ratings`.
+  - Calculate the `num_reviews` as the length of the `reviews` list.
+  - If `num_reviews` is greater than 0:
+    - Return `total_ratings / num_reviews`.
+  - Otherwise, return 0.0.
+
+All Restaurants Class Method:
+- Define a class method named `all()` that returns the list of all restaurant instances.
+  - Return the `all_restaurants` list.
+
