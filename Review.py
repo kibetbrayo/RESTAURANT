@@ -4,7 +4,7 @@ class Review:
     def __init__(self, customer, restaurant, rating):
         self.customer = customer
         self.restaurant = restaurant
-        self.rating.value = rating
+        self.rating = rating
         Review.all_reviews.append(self)
 
     def get_rating(self):

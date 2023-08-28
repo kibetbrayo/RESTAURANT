@@ -1,11 +1,10 @@
-from Restaurant import Restaurant
-from Review import Review
 from Customer import Customer
-# Assume you have already defined the Customer, Review, and Restaurant classes
+from Review import Review
+from Restaurant import Restaurant
 
-# Create some customer instances
-customer1 = Customer("Alice", "Johnson")
-customer2 = Customer("Bob", "Smith")
+# Create customer instances
+customer1 = Customer("George", "Washington")
+customer2 = Customer("John", "Doe")
 
 # Create restaurant instances
 restaurant1 = Restaurant("Delicious Bites")
@@ -16,18 +15,15 @@ customer1.add_review(restaurant1, 4)
 customer1.add_review(restaurant2, 5)
 customer2.add_review(restaurant1, 3)
 
-# Get restaurant names
-print(restaurant1.get_name())  # Output: Delicious Bites
-print(restaurant2.get_name())  # Output: Café Supreme
+# Get all customers and reviews
+all_customers = Customer.all()
+all_reviews = Review.all()
 
-# Get reviews for a restaurant
-print(restaurant1.get_reviews())  # Output: [<Review object at ...>]
-print(restaurant2.get_reviews())  # Output: [<Review object at ...>]
+# Display all customers
+for customer in all_customers:
+    print(customer.full_name())
 
-# Get unique customers who reviewed a restaurant
-print(restaurant1.get_customers())  # Output: [<Customer object at ...>, <Customer object at ...>]
-print(restaurant2.get_customers())  # Output: [<Customer object at ...>]
+# Display all reviews
+for review in all_reviews:
+    print(f"Customer: {review.get_customer().full_name()}, Restaurant: {review.get_restaurant().get_name()}, Rating: {review.get_rating()}")
 
-# Calculate average star rating for a restaurant
-print(restaurant1.average_star_rating())  # Output: 3.5
-print(restaurant2.average_star_rating())  # Output: 5.0
